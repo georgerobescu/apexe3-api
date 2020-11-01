@@ -46,8 +46,8 @@ def process_liquidity_stats_update(event):
 
 
 def init():
-    clientId = "client-fund"
-    clientSecret = "4fcede79-1699-4e0a-aa54-4f7ab8514d94"
+    clientId = "your-client-id-goes-here"
+    clientSecret = "your-client-secret-goes-here"
     emitter = initialise(clientId, clientSecret)
     emitter.on('LIVE_LIQUIDITY', process_liquidity_update)
     emitter.on('LIVE_LIQUIDITY_STATS', process_liquidity_stats_update)

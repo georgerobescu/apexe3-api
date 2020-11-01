@@ -37,8 +37,8 @@ def process_global_orderbook(event):
 
 
 def init():
-    clientId = "client-fund"
-    clientSecret = "4fcede79-1699-4e0a-aa54-4f7ab8514d94"
+    clientId = "your-client-id-goes-here"
+    clientSecret = "your-client-secret-goes-here"
     emitter = initialise(clientId, clientSecret)
     emitter.on('GLOBAL_ORDERBOOK', process_global_orderbook)
 

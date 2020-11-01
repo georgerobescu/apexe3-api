@@ -27,8 +27,8 @@ from apexe3.apexe3 import screen
 import pandas as pd
 
 def init():
-  clientId = "client-fund"
-  clientSecret = "4fcede79-1699-4e0a-aa54-4f7ab8514d94"
+  clientId = "your-client-id-goes-here"
+  clientSecret = "your-client-secret-goes-here"
   initialise(clientId, clientSecret)
   
 #Filter Screen todo think of clearer name
