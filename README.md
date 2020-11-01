@@ -41,7 +41,7 @@ Current real-time and on-demand features:
 
 ## Install
 
-Tested successfully using Python 3.8.x
+Tested successfully using Python 3.8.x. (You may have to use sudo depending on how your local permissions are set).
 
 1. Clone it into your project directory from [APEX:E3 GitHub repository](https://github.com/apexe3/apexe3-api-python):
 ```shell
