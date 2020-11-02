@@ -339,6 +339,22 @@ def generate_default_insights_stream_configurations(base,quote):
     }
     streamConfigs.append(spreadsSubscriptionConfig)
 
+    spreadNegativeSubscriptionConfig = {
+    "action": "SUBSCRIBE",
+        "data": {
+            "event": "INSIGHTS",
+            "baseId": None,
+            "quoteId": None,
+            "futureId": None,
+            "exchangeId": None,
+            "marketType": "SPOT",
+            "analyticType": "SPREAD_NEGATIVE",
+            "analyticSize": "ALL",
+            "analyticPivot": "ALL",
+            "assetClassification": "ALT",
+        }
+    }
+    streamConfigs.append(spreadNegativeSubscriptionConfig)
     return streamConfigs
 
 '''
@@ -445,13 +461,15 @@ def process_message(message):
             emitter.emit('LIVE_LIQUIDITY_STATS', liveLiquidityStats)
         elif(decodedMetaData != None and 'event' in decodedMetaData and decodedMetaData['event']=='INSIGHTS' and 'analyticType' in decodedMetaData):
             if(decodedMetaData['analyticType'] == 'SPREAD'):
-                emitter.emit('SPREAD', msg) #make msg easier to process
+                emitter.emit('SPREAD', msg)
+            elif(decodedMetaData['analyticType'] == 'SPREAD_NEGATIVE'):
+                emitter.emit('ARBITRAGE', msg)
             elif(decodedMetaData['analyticType'] == 'VOI_BID'):
-                 emitter.emit('VOI_BID', msg) #make msg easier to process
+                 emitter.emit('VOI_BID', msg)
             elif(decodedMetaData['analyticType'] == 'VOI_ASK'):
-                 emitter.emit('VOI_ASK', msg) #make msg easier to process    
+                 emitter.emit('VOI_ASK', msg)
             elif(decodedMetaData['analyticType'] == 'WHALE'):
-                 emitter.emit('WHALE', msg) #make msg easier to process
+                 emitter.emit('WHALE', msg)
             else:
                 print('unrecognised insight type')          
         else:

@@ -38,6 +38,14 @@ def process_spread(event):
     print(table)
     print('------------------------------------------')
 
+def process_arbitrage(event):
+    print('Arbitrage Opportunity For ' + str(base) +' '+ str(quote))
+    table=pd.DataFrame(event["values"])
+    table.columns = ['exchange','base','quote','misc','strSpread', 'spread']
+    table = table[['base','quote','spread']]
+    print(table)
+    print('------------------------------------------')    
+
 def process_whales(event):
     print('Largest whales for ' + str(base) +' '+ str(quote))
     table=pd.DataFrame(event["values"])
@@ -73,6 +81,7 @@ def init():
     #emitter.on('WHALE', process_whales)
     #emitter.on('VOI_BID', process_bid_imbalances)
     #emitter.on('VOI_ASK', process_ask_imbalances)
+    #emitter.on('ARBITRAGE', process_arbitrage)
 
 
 if __name__ == "__main__":
