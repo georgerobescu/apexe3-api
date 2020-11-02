@@ -1,6 +1,6 @@
 # APEX:E3 - API Google Sheet Low Code Examples
 
-![preview](h)
+![preview]()
 
 All examples make use of the apexe3.gs wrapper script which implements a subset of the REST and websocket API definitions defined in the [APEX:E3 API documentation](https://api.ae3platform.com/docs). 
 
