@@ -1,6 +1,6 @@
 # APEX:E3 - API Python Low Code Examples
 
-![preview](https://raw.githubusercontent.com/apexe3/apexe3-api-python/main/apexe3/assets/liquidityRealtimeUpdates.gif)
+![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/python/apexe3/assets/liquidityRealtimeUpdates.gif)
 
 All examples make use of the apexe3/apexe3.py wrapper which implements a subset of the  REST and websocket API definitions defined in the [APEX:E3 API documentation](https://api.ae3platform.com/docs). 
 
