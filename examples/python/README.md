@@ -9,7 +9,7 @@ All examples make use of the apexe3/apexe3.py wrapper which implements a subset 
 To run: 
 
 ```shell
-python examples/python/real_time_global_orderbook.py
+python2 examples/python/real_time_global_orderbook.py
 ```
 This will output the global orderbooks for bids and asks, by best bid and ask prices respectively (only bids are shown for the sake of example).
 
@@ -49,7 +49,7 @@ You can easily process the table of bids (or asks) in your trading algorithm log
 To run: 
 
 ```shell
-python examples/python/real_time_global_liquidity.py
+python3 examples/python/real_time_global_liquidity.py
 ```
 
 This will output the total demand (bid) and supply (ask) liquidity for the BTC/USDT Spot market. 
@@ -85,7 +85,7 @@ def process_liquidity_update(event):
 To run:
 
 ```shell
-python examples/python/real_time_insights.py
+python3 examples/python/real_time_insights.py
 ```
 This will output spreads for BTC/USDT, ranked by tightest spread for a given exchange.
 
@@ -107,7 +107,7 @@ Uncommenting the following block, will produce similarly structured tables for w
 To run:
 
 ```shell
-python examples/python/on_demand_screener.py
+python3 examples/python/on_demand_screener.py
 ```
 This will output screened results for BTC/USDT consisting of price and volume metrics on an on-demand basis.
 
