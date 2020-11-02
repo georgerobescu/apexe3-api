@@ -70,7 +70,7 @@ sudo python3 examples/python/setup.py install
 ```shell
 cd apexe3-api/examples/nodejs
 ```
-2 run npm install to install dependencies
+2. run npm install to install dependencies
 ```shell
 npm install
 ```
