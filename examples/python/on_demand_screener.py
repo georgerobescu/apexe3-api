@@ -35,6 +35,7 @@ def init():
 def screenPair(base,quote):
     result = screen(base,quote)
     table=pd.DataFrame(result)
+    table = table[['exchangeId','baseId', 'quoteId', 'v24HrChg','v30dChg','v24HrVsV30dSum','p15MinChg','p1HrChg','p7dChg','pLast']]
     print(table)
 
 
