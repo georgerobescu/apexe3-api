@@ -4,7 +4,7 @@
 
 All examples make use of the apexe3/apexe3.py wrapper which implements a subset of the  REST and websocket API definitions defined in the [APEX:E3 API documentation](https://api.ae3platform.com/docs). 
 
-## The Real-time Global Orderbook - examples/real_time_global_orderbook.py
+## The Real-time Global Orderbook
 
 To run: 
 
