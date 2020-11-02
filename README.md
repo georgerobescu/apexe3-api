@@ -5,7 +5,8 @@ The APEX:E3 API gives you access to powerful analytics and market data generated
 ### [Low Code Examples of How To Use the API](https://github.com/apexe3/apexe3-api/tree/main/examples) 
 ### [Example Low Code Dashboard Built Using the API](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8777n4TIZvcWjD48WrKxPiJcaTOZwBg2WWNyHgR8NnDgLMtCT1E2EPqb2d_otdLUw3YzBQgB6_bLv/pubhtml)
 ### [API Docs](https://api.ae3platform.com/docs) 
-### [APEX:E3](https://www.apexe3.com)  · [Web Application](https://app.ae3platform.com/)
+### [APEX:E3](https://www.apexe3.com)
+### [Web Application](https://app.ae3platform.com/)
 
 In addition to enriched exchange data from all major cryptocurrency exchanges, the **APEX:E3 API** includes real-time analytics and market intelligence. This means you can access live orderbook analytics, arbitrage opportunities and identify large blocks of liquidity with ease. The low code examples have been designed with simplicity in mind so that you can easily start to manipulate the data to enhance or create new trading bots, conduct real-time analysis or create powerful algorithms. The data structures can be easily stored in your database of choice for historical analysis, backtesting or general querying.
 
