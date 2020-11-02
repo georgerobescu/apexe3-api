@@ -1,6 +1,6 @@
 # APEX:E3 API Low Code Examples
 
-Here you will find powerful low code examples for [Python](https://github.com/apexe3/apexe3-api/tree/main/examples/python), [Nodejs](https://github.com/apexe3/apexe3-api/tree/main/examples/nodejs) and [Google Sheets]().  
+Here you will find powerful low code examples for [Python](https://github.com/apexe3/apexe3-api/tree/main/examples/python), [Nodejs](https://github.com/apexe3/apexe3-api/tree/main/examples/nodejs) and [Google Sheets](https://github.com/apexe3/apexe3-api/tree/main/examples/google-sheets).  
 
 The examples cover the following usecases for Digital Asset markets
 
