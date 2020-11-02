@@ -48,7 +48,13 @@ git clone git@github.com:apexe3/apexe3-api.git
 
 **Python**
 
-**Python 3.8.x required**. Version 3.8.6 can be downloaded for the MAC [here](https://www.python.org/ftp/python/3.8.6/python-3.8.6-macosx10.9.pkg) and for Windows [here]( https://www.python.org/downloads/release/python-386/). 
+***Python 3.8.x required***. Version 3.8.6 can be downloaded for the MAC [here](https://www.python.org/ftp/python/3.8.6/python-3.8.6-macosx10.9.pkg) and for Windows [here]( https://www.python.org/downloads/release/python-386/). 
+
+You can check your current version of Python by typing
+
+```shell
+python --version
+```
 
 1. cd into the apexe3-api directory
 ```shell
