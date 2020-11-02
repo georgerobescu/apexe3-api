@@ -77,7 +77,7 @@ To stream the global orderbook for BTC/USDT across all supported exchanges type
 ```shell
 python3 examples/python/real_time_global_orderbook.py
 ```
-**this will produce a real-time updating structured dataframe with the top 25 depth for btc/usdt taken from each exchange, combined and ordered to produce a globally updating orderbook ready for real-time algorithmic trading or analysis.**
+**Once run, this will produce a real-time updating stream of the global orderbook for BTC/USDT across exchanges.**
 
 
 
