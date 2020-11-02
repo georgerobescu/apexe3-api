@@ -41,31 +41,47 @@ Current real-time and on-demand features:
 
 # Install
 
-## Python
-**Python 3.8.x required**. Version 3.8.6 can be downloaded for the MAC [here](https://www.python.org/ftp/python/3.8.6/python-3.8.6-macosx10.9.pkg) and for Windows [here]( https://www.python.org/downloads/release/python-386/). 
-
 1. Clone this repository into your project directory from [APEX:E3 GitHub repository](https://github.com/apexe3/apexe3-api):
 ```shell
 git clone git@github.com:apexe3/apexe3-api.git
 ```
-2. cd into the directory
+
+## Python
+**Python 3.8.x required**. Version 3.8.6 can be downloaded for the MAC [here](https://www.python.org/ftp/python/3.8.6/python-3.8.6-macosx10.9.pkg) and for Windows [here]( https://www.python.org/downloads/release/python-386/). 
+
+1. cd into the apexe3-api directory
 ```shell
 cd apexe3-api
 ```
-3. run setup.py to install dependencies
+
+2. run setup.py to install dependencies
 ```shell
 python3 examples/python/setup.py install 
 ```
-4. If you see errors about directory permissions then use the sudo command
+3. If you see errors about directory permissions then use the sudo command
 ```shell
 sudo python3 examples/python/setup.py install 
 ```
 
+## Nodejs 
+**Successfully tested on Node 11.x - 14.x**. Nodejs can be downloaded for Mac and Windows from [here](https://nodejs.org/en/download/)
+
+1. cd into the directory
+```shell
+cd apexe3-api/examples/nodejs
+```
+2 run npm install to install dependencies
+```shell
+npm install
+```
+
 ## Quick start - global aggregated orderbook streamed in the command line
 
-**You will need authentication credentials to run this example. Contact contactus@apexe3.com to get your credentials**. Once you recieve your credentials, replace the following lines in examples/python/real_time_global_orderbook.py
+**You will need authentication credentials to run this example. Contact contactus@apexe3.com to get your credentials**. 
 
 **Python**
+
+Replace the following lines in examples/python/real_time_global_orderbook.py with your APEX:E3 credentials
 
 ```python
   clientId = "your-client-id-goes-here"
@@ -77,6 +93,22 @@ To stream the global orderbook for BTC/USDT across all supported exchanges type
 ```shell
 python3 examples/python/real_time_global_orderbook.py
 ```
+**Nodejs**
+
+Replace the following lines in examples/nodejs/real-time-global-orderbook.js with your APEX:E3 credentials
+
+```javascript
+  const clientId = "your-client-id-goes-here";
+  const clientSecret = "your-client-secret-goes-here";
+```  
+
+To stream the global orderbook for BTC/USDT across all supported exchanges type
+
+```shell
+cd apexe3-api/examples/nodejs
+node real-time-global-orderbook.js
+```
+
 **Once run, this will produce a real-time updating stream of the global orderbook for BTC/USDT across exchanges.**
 
 
