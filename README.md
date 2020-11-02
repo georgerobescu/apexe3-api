@@ -46,7 +46,8 @@ Current real-time and on-demand features:
 git clone git@github.com:apexe3/apexe3-api.git
 ```
 
-## Python
+**Python**
+
 **Python 3.8.x required**. Version 3.8.6 can be downloaded for the MAC [here](https://www.python.org/ftp/python/3.8.6/python-3.8.6-macosx10.9.pkg) and for Windows [here]( https://www.python.org/downloads/release/python-386/). 
 
 1. cd into the apexe3-api directory
@@ -63,7 +64,8 @@ python3 examples/python/setup.py install
 sudo python3 examples/python/setup.py install 
 ```
 
-## Nodejs 
+**Nodejs**
+
 **Successfully tested on Node 11.x - 14.x**. Nodejs can be downloaded for Mac and Windows from [here](https://nodejs.org/en/download/)
 
 1. cd into the directory
