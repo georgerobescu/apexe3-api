@@ -13,7 +13,7 @@ python examples/real_time_global_orderbook.py
 ```
 This will output the global orderbooks for bids and asks, by best bid and ask prices respectively (only bids are shown for the sake of example).
 
-![preview](https://github.com/apexe3/apexe3-api-python/blob/main/apexe3/assets/globalOrderbookUpdating.png?raw=true)
+![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/python/apexe3/assets/globalOrderbookUpdating.png)
 
 **As the picture above shows, the top 25 depth for btc/usdt is taken from each exchange, combined and ordered to produce a globally updating orderbook ready for real-time algorithmic trading or analysis.** 
 
