@@ -1,6 +1,6 @@
 # APEX:E3 API Cryptocurrency Analytics Low Code Examples
 
-Here you will find powerful low code examples for [Python](), [Nodejs]() and [Google Sheets]().  
+Here you will find powerful low code examples for [Python](https://github.com/apexe3/apexe3-api/tree/main/examples/python), [Nodejs]() and [Google Sheets]().  
 
 The examples cover the following usecases
 
