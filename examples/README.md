@@ -15,7 +15,7 @@ This will output the global orderbooks for bids and asks, by best bid and ask pr
 
 ![preview](https://github.com/apexe3/apexe3-api-python/blob/main/apexe3/assets/globalOrderbookUpdating.png?raw=true)
 
-**As the picture above shows, the top 25 depth for btc/usdt is taken from each eachange, combined and ordered to produce a globally updating orderbook ready for real-time algorithmic trading or analysis.** 
+**As the picture above shows, the top 25 depth for btc/usdt is taken from each exchange, combined and ordered to produce a globally updating orderbook ready for real-time algorithmic trading or analysis.** 
 
 The initialise_global_orderbook function initialises the global orderbook with BTC/USDT SPOT market. You can change "btc", "usdt" to a pair of your choice. (Derivatives (SWAP, FUTURE) are also supported).
 ```python
