@@ -22,7 +22,7 @@ The initialise_global_orderbook function initialises the global orderbook with B
     initialise_global_orderbook("btc", "usdt", None,"SPOT")
 ```
 
-In this example, the following columns
+In this example, the following columns **are retrieved for every BTC/USDT orderbook update across supported exchanges in real-time.**
 
 - bid price (bid px) (ordered by best bid across exchanges).
 - bid size 
@@ -30,8 +30,6 @@ In this example, the following columns
 - bid sum (bid px * bid size)
 - cumulative bid sum are retrieved (bid sum added up at each depth)
 - exchange
-
-**are retrieved for every BTC/USDT orderbook update across supported exchanges in real-time.** 
 
 All updates are emitted and converted to a pandas dataframe for further programmatic analysis.
 ```python
