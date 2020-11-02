@@ -9,7 +9,7 @@ All examples make use of the apexe3/apexe3.py wrapper which implements a subset 
 To run: 
 
 ```shell
-python2 examples/python/real_time_global_orderbook.py
+python3 examples/python/real_time_global_orderbook.py
 ```
 This will output the global orderbooks for bids and asks, by best bid and ask prices respectively (only bids are shown for the sake of example).
 
