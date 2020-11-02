@@ -1,0 +1,21 @@
+{
+  "name": "apexe3-api-wrapper-utilities",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "events": "^3.2.0",
+    "js-base64": "^3.5.2",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.20",
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.2",
+    "ws": "^7.3.1"
+  }
+}
