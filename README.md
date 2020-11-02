@@ -55,6 +55,11 @@ You can check your current version of Python by typing
 ```shell
 python --version
 ```
+or if you are on Python 3.x.x
+
+```shell
+python3 --version
+```
 
 1. cd into the apexe3-api directory
 ```shell
