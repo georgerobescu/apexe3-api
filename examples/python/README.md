@@ -44,12 +44,6 @@ def process_global_orderbook(event):
 ```
 You can easily process the table of bids (or asks) in your trading algorithm logic, store it for historical analysis or manipulate as desired.
 
-Your APEX:E3 credentials will need to be set in the init() function. (email contactus@apexe3.com to obtain credentials).
-
-```python
-    clientId = "your-client-id-goes-here"
-    clientSecret = "your-client-secret-goes-here"
-```
 
 
 
