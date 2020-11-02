@@ -9,7 +9,7 @@ All examples make use of the apexe3/apexe3.py wrapper which implements a subset 
 To run: 
 
 ```shell
-python examples/python/real_time_global_orderbook.py
+python2 examples/python/real_time_global_orderbook.py
 ```
 This will output the global orderbooks for bids and asks, by best bid and ask prices respectively (only bids are shown for the sake of example).
 
@@ -49,7 +49,7 @@ You can easily process the table of bids (or asks) in your trading algorithm log
 To run: 
 
 ```shell
-python examples/python/real_time_global_liquidity.py
+python3 examples/python/real_time_global_liquidity.py
 ```
 
 This will output the total demand (bid) and supply (ask) liquidity for the BTC/USDT Spot market. 
@@ -85,7 +85,7 @@ def process_liquidity_update(event):
 To run:
 
 ```shell
-python examples/python/real_time_insights.py
+python3 examples/python/real_time_insights.py
 ```
 This will output spreads for BTC/USDT, ranked by tightest spread for a given exchange.
 
@@ -102,4 +102,49 @@ Uncommenting the following block, will produce similarly structured tables for w
 ```
 **You can easily process these table in your trading algorithm, or store them to analyse how orderbook whales, spreads, imbalances and arbitrage opportunities evolve over time**
 
+## Screen markets using technical indicators for any Pair, Quote or Exchange
 
+To run:
+
+```shell
+python3 examples/python/on_demand_screener.py
+```
+This will output screened results for BTC/USDT consisting of price and volume metrics on an on-demand basis.
+
+![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/python/apexe3/assets/programmaticScreener.png?raw=true)
+
+This example screens the BTC/USDT pair using the following function:
+
+```python
+def screenPair(base,quote):
+    result = screen(base,quote)
+    table=pd.DataFrame(result)
+    table = table[['exchangeId','baseId', 'quoteId', 'v24HrChg','v30dChg','v24HrVsV30dSum','p15MinChg','p1HrChg','p7dChg','pLast']]
+    print(table)
+```
+
+A successful response will consist of the following columns:
+
+- exchangeId
+- baseId 
+- quoteId
+- v24HrChange (24 hour volume change)
+- v30dChg (30 day volume change)
+- v24HrVsV30dSum (24 hour vs 30 day volume change)
+- p15MinChg (15 minute price change)
+- p1HrChg (1 hour price change)
+- p7dChg (7 day price change)
+- pLast (latest price)
+
+The screen function, imported from the apexe3.py wrapper class, can take more parameters as follows:
+
+```python
+def screen(base,quote,exchanges=[], rsi=[],smaCross=[],volatility=[], weeklyOpenChg=[], bollingerBand='', fibRetracements=[], trends=[], ichimoku=[]):
+```
+This allows for instantly screening pairs, markets or exchanges by RSI, Moving Average, Volatility, Bollinger Bands, Fibretracement, Trends and Ichimoku cloud technical indicator analysis.
+
+Example values for these parameters can be found in apexe3.py under the following section:
+
+```python
+#screener filter values for reference
+```
