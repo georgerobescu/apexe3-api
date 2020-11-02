@@ -8,9 +8,9 @@ You can easily manipulate the data contained in all sheets to create derived col
 
 ## The On-Demand Global Orderbook & Liquidity for any Pair Across Exchanges
 
-This shows the global orderbooks for bids and asks, by best bid and ask prices respectively (only bids are shown for the sake of example).
+This shows the global orderbook for bids and asks of the inputted pair, by best bid and ask prices respectively (only bids are shown for the sake of example).
 
-Global liquidity based on aggregatd top 25 orderbook depth is also shown.
+Global liquidity based on aggregated top 25 orderbook depth is also shown.
 
 The form on the top left can be used to select other pairs.
 
