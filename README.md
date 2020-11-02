@@ -118,4 +118,4 @@ node real-time-global-orderbook.js
 
 The following dashboard is powered by the APEX:E3 API. This is read-only view. To request access to an interactive sheet, please email us on contactus@apexe3.com.
 
-[View Dashboard](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8777n4TIZvcWjD48WrKxPiJcaTOZwBg2WWNyHgR8NnDgLMtCT1E2EPqb2d_otdLUw3YzBQgB6_bLv/pubhtml)
+[View Dashboard](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8777n4TIZvcWjD48WrKxPiJcaTOZwBg2WWNyHgR8NnDgLMtCT1E2EPqb2d_otdLUw3YzBQgB6_bLv/pubhtml) **refresh the page if you see the "NO DATA" message**
