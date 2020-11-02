@@ -80,6 +80,26 @@ def process_liquidity_update(event):
 ```
 **You can easily process this table in your trading algorithm, smart order routing logic, store it for historical analysis or manipulate as desired.**
 
-## Identify Whale Orders, Arbitrage Opportunities, Large/Medium/Small Bid/Ask Imbalances & Tightest spreads for a Pair or Across Exchanges
+## Identify Whale Orders, Arbitrage Opportunities, Large/Medium/Small Bid/Ask Imbalances & Tightest spreads for any Pair Across Exchanges
+
+To run:
+
+```shell
+python examples/python/real_time_insights.py
+```
+This will output spreads for BTC/USDT, ranked by tightest spread for a given exchange.
+
+![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/python/apexe3/assets/spreadsAcrossExchanges.png?raw=true)
+
+Uncommenting the following block, will produce similarly structured tables for whale orders, bid/ask order imbalances and arbitrage opportunities.
+
+```python
+    #UNCOMMENT TO RECIEVE UPDATES FOR THESE ANALYTICS
+    #emitter.on('WHALE', process_whales)
+    #emitter.on('VOI_BID', process_bid_imbalances)
+    #emitter.on('VOI_ASK', process_ask_imbalances)
+    #emitter.on('ARBITRAGE', process_arbitrage)
+```
+**You can easily process these table in your trading algorithm, or store them to analyse how orderbook whales, spreads, imbalances and arbitrage opportunities evolve over time**
 
 
