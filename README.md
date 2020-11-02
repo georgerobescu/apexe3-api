@@ -65,7 +65,7 @@ sudo python3 examples/python/setup.py install
 
 **You will need authentication credentials to run this example. Contact contactus@apexe3.com to get your credentials**. Once you recieve your credentials, replace the following lines in examples/python/real_time_global_orderbook.py
 
-**Python
+**Python**
 
 ```python
   clientId = "your-client-id-goes-here"
