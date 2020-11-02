@@ -4,16 +4,18 @@
 
 All examples make use of the apexe3/apexe3.py wrapper which implements a subset of the  REST and websocket API definitions defined in the [APEX:E3 API documentation](https://api.ae3platform.com/docs). 
 
-## The Real-time Global Orderbook - examples/real_time_global_orderbook.py
+## The Real-time Global Orderbook
 
 To run: 
 
 ```shell
 python examples/real_time_global_orderbook.py
 ```
-This will output the global orderbooks for bids and asks, both ordered by best bid and ask prices respectively (only bids are shown for the sake of example).
+This will output the global orderbooks for bids and asks, by best bid and ask prices respectively (only bids are shown for the sake of example).
 
 ![preview](https://github.com/apexe3/apexe3-api-python/blob/main/apexe3/assets/globalOrderbookUpdating.png?raw=true)
+
+**As the picture above shows, the top 25 depth for btc/usdt is taken from each exchange, combined and ordered to produce a globally updating orderbook ready for real-time algorithmic trading or analysis.** 
 
 The initialise_global_orderbook function initialises the global orderbook with BTC/USDT SPOT market. You can change "btc", "usdt" to a pair of your choice. (Derivatives (SWAP, FUTURE) are also supported).
 ```python
@@ -24,12 +26,12 @@ In this example, the following columns
 
 - bid price (bid px) (ordered by best bid across exchanges).
 - bid size 
-- cumulative bid size
+- cumulative bid size (bid size added up at each depth)
 - bid sum (bid px * bid size)
-- cumulative bid sum are retrieved
+- cumulative bid sum are retrieved (bid sum added up at each depth)
 - exchange
 
-are retrived for every BTC/USDT orderbook update across supported exchanges in real-time. 
+**are retrieved for every BTC/USDT orderbook update across supported exchanges in real-time.** 
 
 All updates are emitted and converted to a pandas dataframe for further programmatic analysis.
 ```python
