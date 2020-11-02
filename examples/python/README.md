@@ -109,11 +109,11 @@ To run:
 ```shell
 python examples/python/on_demand_screener.py
 ```
-This will output screened results for BTC/USDT consisting of price and volume metrics.
+This will output screened results for BTC/USDT consisting of price and volume metrics on an on-demand basis.
 
 ![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/python/apexe3/assets/programmaticScreener.png?raw=true)
 
-This example screens the BTC/USDT pair:
+This example screens the BTC/USDT pair using the following function:
 
 ```python
 def screenPair(base,quote):
@@ -122,6 +122,19 @@ def screenPair(base,quote):
     table = table[['exchangeId','baseId', 'quoteId', 'v24HrChg','v30dChg','v24HrVsV30dSum','p15MinChg','p1HrChg','p7dChg','pLast']]
     print(table)
 ```
+
+A successful response will consist of the following columns:
+
+- exchangeId
+- baseId 
+- quoteId
+- v24HrChange (24 hour volume change)
+- v30dChg (30 day volume change)
+- v24HrVsV30dSum (24 hour vs 30 day volume change)
+- p15MinChg (15 minute price change)
+- p1HrChg (1 hour price change)
+- p7dChg (7 day price change)
+- pLast (latest price)
 
 The screen function, imported from the apexe3.py wrapper class, can take more parameters as follows:
 
