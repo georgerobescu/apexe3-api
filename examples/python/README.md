@@ -4,7 +4,7 @@
 
 All examples make use of the apexe3/apexe3.py wrapper which implements a subset of the  REST and websocket API definitions defined in the [APEX:E3 API documentation](https://api.ae3platform.com/docs). 
 
-## The Real-time Global Orderbook for a Pair Across Exchanges
+## The Real-time Global Orderbook for any Pair Across Exchanges
 
 To run: 
 
@@ -44,12 +44,12 @@ def process_global_orderbook(event):
 ```
 You can easily process the table of bids (or asks) in your trading algorithm logic, store it for historical analysis or manipulate as desired.
 
-## Smart Order Routing Analytics - The Real-time Total Supply & Demand of Liquidity for a Pair Across Exchanges
+## Smart Order Routing Analytics - The Real-time Total Supply & Demand of Liquidity for any Pair Across Exchanges
 
 To run: 
 
 ```shell
-python3 examples/python/real_time_global_liquidity.py
+python examples/python/real_time_global_liquidity.py
 ```
 
 This will output the total demand (bid) and supply (ask) liquidity for the BTC/USDT Spot market. 
@@ -65,7 +65,6 @@ In this example, the following columns **are retrieved for every BTC/USDT orderb
 - Imbalance (Ask Liquidity - Bid Liquidity)
 - Market Price_25 (The likely price of a market order filling the top 25 orders on that exchange)
 
-This data can be used for smart order routing across exchanges.
 
 All updates are emitted and converted to a pandas dataframe for further programmatic analysis.
 
@@ -79,5 +78,8 @@ def process_liquidity_update(event):
     table=pd.DataFrame(event)
     table.columns = ['Exchange', 'Ask Liquidity', 'Bid Liquidity', 'Amount', 'Imbalance', 'Market Price_25']
 ```
-**You can easily process this table in your trading algorithm, smart order routing logic, store it for historical analysis or manipulate as desire.**
+**You can easily process this table in your trading algorithm, smart order routing logic, store it for historical analysis or manipulate as desired.**
+
+## Identify Whale Orders, Arbitrage Opportunities, Large/Medium/Small Bid/Ask Imbalances & Tightest spreads for a Pair or Across Exchanges
+
 
