@@ -42,7 +42,7 @@ Current real-time and on-demand features:
 # Install
 
 ## Python
-**Python 3.8.x required**. Version 3.8.6 can be downloaded for the [MAC](https://www.python.org/ftp/python/3.8.6/python-3.8.6-macosx10.9.pkg) and for [Windows]( https://www.python.org/downloads/release/python-386/). 
+**Python 3.8.x required**. Version 3.8.6 can be downloaded for the MAC [here](https://www.python.org/ftp/python/3.8.6/python-3.8.6-macosx10.9.pkg) and for Windows [here]( https://www.python.org/downloads/release/python-386/). 
 
 1. Clone this repository into your project directory from [APEX:E3 GitHub repository](https://github.com/apexe3/apexe3-api):
 ```shell
