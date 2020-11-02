@@ -56,6 +56,10 @@ cd apexe3-api
 ```shell
 python3 examples/python/setup.py install 
 ```
+4. If you see errors about directory permissions then use the sudo command
+```shell
+sudo python3 examples/python/setup.py install 
+```
 
 ## Quick start - global aggregated orderbook streamed in the command line
 
