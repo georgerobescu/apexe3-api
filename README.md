@@ -16,7 +16,7 @@ Current real-time and on-demand features:
 - arbitrage opportunities (between multiple exchanges and thousands of markets in one place) 
 - spreads (delta between top bid and ask prices across thousands of markets)
 
-## Supported Cryptocurrency Exchanges
+## Cryptocurrency exchange data feeds
 
 |      |Exchange|
 |------|--------|
@@ -42,7 +42,7 @@ Current real-time and on-demand features:
 # Install
 
 ## Python
-Tested successfully using Python 3.8.x. (You may have to use sudo depending on how your local permissions are set).
+**Python 3.8.x required**. Version 3.8.6 can be downloaded for the [MAC](https://www.python.org/ftp/python/3.8.6/python-3.8.6-macosx10.9.pkg) and for [Windows]( https://www.python.org/downloads/release/python-386/). 
 
 1. Clone this repository into your project directory from [APEX:E3 GitHub repository](https://github.com/apexe3/apexe3-api):
 ```shell
@@ -57,7 +57,9 @@ cd apexe3-api
 python3 examples/python/setup.py install 
 ```
 
-## Quick start - Python
+## Quick start - global aggregated orderbook streamed in the command line
+
+**Python**
 
 To stream the global orderbook for BTC/USDT across all supported exchanges type
 
