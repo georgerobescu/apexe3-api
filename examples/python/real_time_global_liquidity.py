@@ -33,16 +33,16 @@ import pandas as pd
 def process_liquidity_update(event):
     table=pd.DataFrame(event)
     table.columns = ['Exchange', 'Ask Liquidity', 'Bid Liquidity', 'Amount', 'Imbalance', 'Market Price_25']
-    print(' ')
-    print('Liquidity based on top 25 ask depth')
-    print(table)
+    #print(' ')
+    #print('Liquidity based on top 25 ask depth')
+    print(table, end=('\r'))
 
 def process_liquidity_stats_update(event):
     table=pd.DataFrame(event)
     table.columns = ['Total Ask Liquidity', 'Total Amount', 'Total Imbalance']
-    print(' ')
-    print('Liquidity Stats based on top 25 ask depth')
-    print(table)    
+    #print(' ')
+    #print('Liquidity Stats based on top 25 ask depth')
+    #print(table)    
 
 
 def init():
@@ -51,6 +51,7 @@ def init():
     emitter = initialise(clientId, clientSecret)
     emitter.on('LIVE_LIQUIDITY', process_liquidity_update)
     emitter.on('LIVE_LIQUIDITY_STATS', process_liquidity_stats_update)
+    pd.set_option('display.float_format', lambda x: '%.5f' % x)
 
 
 if __name__ == "__main__":
