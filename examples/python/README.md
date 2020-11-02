@@ -4,12 +4,12 @@
 
 All examples make use of the apexe3/apexe3.py wrapper which implements a subset of the  REST and websocket API definitions defined in the [APEX:E3 API documentation](https://api.ae3platform.com/docs). 
 
-## The Real-time Global Orderbook
+## The Real-time Global Orderbook for a Pair Across Exchanges
 
 To run: 
 
 ```shell
-python3 examples/python/real_time_global_orderbook.py
+python examples/python/real_time_global_orderbook.py
 ```
 This will output the global orderbooks for bids and asks, by best bid and ask prices respectively (only bids are shown for the sake of example).
 
@@ -44,6 +44,13 @@ def process_global_orderbook(event):
 ```
 You can easily process the table of bids (or asks) in your trading algorithm logic, store it for historical analysis or manipulate as desired.
 
+## The Real-time Total Supply & Demand of Liquidity for a Pair Across Exchanges
 
+To run: 
 
+```shell
+python3 examples/python/real_time_global_liquidity.py
+```
+
+This will output the total demand (bid) and supply (ask) liquidity for the BTC/USDT Spot market. 
 
