@@ -102,4 +102,36 @@ Uncommenting the following block, will produce similarly structured tables for w
 ```
 **You can easily process these table in your trading algorithm, or store them to analyse how orderbook whales, spreads, imbalances and arbitrage opportunities evolve over time**
 
+## Screen markets using technical indicators for any Pair, Quote or Exchange
 
+To run:
+
+```shell
+python examples/python/on_demand_screener.py
+```
+This will output screened results for BTC/USDT consisting of price and volume metrics.
+
+![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/python/apexe3/assets/programmaticScreener.png?raw=true)
+
+This example screens the BTC/USDT pair:
+
+```python
+def screenPair(base,quote):
+    result = screen(base,quote)
+    table=pd.DataFrame(result)
+    table = table[['exchangeId','baseId', 'quoteId', 'v24HrChg','v30dChg','v24HrVsV30dSum','p15MinChg','p1HrChg','p7dChg','pLast']]
+    print(table)
+```
+
+The screen function, imported from the apexe3.py wrapper class, can take more parameters as follows:
+
+```python
+def screen(base,quote,exchanges=[], rsi=[],smaCross=[],volatility=[], weeklyOpenChg=[], bollingerBand='', fibRetracements=[], trends=[], ichimoku=[]):
+```
+This allows for instantly screening pairs, markets or exchanges by RSI, Moving Average, Volatility, Bollinger Bands, Fibretracement, Trends and Ichimoku cloud technical indicator analysis.
+
+Example values for these parameters can be found in apexe3.py under the following section:
+
+```python
+#screener filter values for reference
+```
