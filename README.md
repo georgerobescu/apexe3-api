@@ -116,6 +116,6 @@ node real-time-global-orderbook.js
 
 **Google Sheets**
 
-The following [Dashboard](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8777n4TIZvcWjD48WrKxPiJcaTOZwBg2WWNyHgR8NnDgLMtCT1E2EPqb2d_otdLUw3YzBQgB6_bLv/pubhtml) is powered by the APEX:E3 API. This is read-only example of what can be built with our API. To request access to an interactive sheet, please email us on contactus@apexe3.com.
+The following [Dashboard](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8777n4TIZvcWjD48WrKxPiJcaTOZwBg2WWNyHgR8NnDgLMtCT1E2EPqb2d_otdLUw3YzBQgB6_bLv/pubhtml) is powered by the APEX:E3 API. This is a read-only example of what can be built with our API. To request access to an interactive sheet, please email us on contactus@apexe3.com.
 
- **if you see the "NO DATA" message, refresh the page**
+ **If you see the "NO DATA" message, refresh the page**
