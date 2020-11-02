@@ -2,7 +2,7 @@
 
 Here you will find powerful low code examples for [Python](https://github.com/apexe3/apexe3-api/tree/main/examples/python), [Nodejs]() and [Google Sheets]().  
 
-The examples cover the following usecases
+The examples cover the following usecases for Digital Asset markets
 
 - Streaming of a real-time global orderbook for a given pair across exchanges
 - Streaming of total liquidity available for a given pair across exchanges
