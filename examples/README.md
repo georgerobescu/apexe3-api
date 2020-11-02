@@ -13,3 +13,9 @@ The examples cover the following usecases for Digital Asset markets
 
 All examples make use of an apexe3 wrapper that takes care of connectivity and data formatting. As a result the examples provide simplified data structures that can be manipulated, saved or analysed for any use case you desire e.g. algorithmic trading, research or custom dashboard creation.
 
+Your APEX:E3 credentials will be needed to run all examples. (email contactus@apexe3.com to obtain credentials).
+
+```
+    clientId = "your-client-id-goes-here"
+    clientSecret = "your-client-secret-goes-here"
+```
