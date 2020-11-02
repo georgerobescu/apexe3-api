@@ -114,4 +114,7 @@ node real-time-global-orderbook.js
 **Once run, this will produce a real-time updating stream of the global orderbook for BTC/USDT across exchanges.**
 
 
+**Google Sheets**
 
+The following dashboard is powered by the APEX:E3 API. This is read-only view. To request access to an interactive sheet, please email us on contactus@apexe3.com.
+[View Dashboard](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8777n4TIZvcWjD48WrKxPiJcaTOZwBg2WWNyHgR8NnDgLMtCT1E2EPqb2d_otdLUw3YzBQgB6_bLv/pubhtml)
