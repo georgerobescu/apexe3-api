@@ -1,6 +1,6 @@
 # APEX:E3 - API Nodejs Low Code Examples
 
-![preview]()
+![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/nodejs/apexe3/assets/nodejsondemandscreener.png?raw=true)
 
 All examples make use of the apexe3/apexe3.js wrapper which implements a subset of the REST and websocket API definitions defined in the [APEX:E3 API documentation](https://api.ae3platform.com/docs). 
 
@@ -14,7 +14,7 @@ node real-time-global-orderbook.js
 ```
 This will output the global orderbooks for bids and asks, by best bid and ask prices respectively (only bids are shown for the sake of example).
 
-![preview]()
+![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/nodejs/apexe3/assets/nodejsglobalorderbook.png?raw=true)
 
 **As the picture above shows, the top 25 depth for btc/usdt is taken from each exchange, combined and ordered to produce a globally updating orderbook ready for real-time algorithmic trading or analysis.** 
 
@@ -51,7 +51,7 @@ node real-time-liquidity.js
 ```
 
 This will output the total demand (bid) and supply (ask) liquidity for the BTC/USDT Spot market. 
-![preview]()
+![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/nodejs/apexe3/assets/nodejsgloballiquidity.png?raw=true)
 
 The above picture shows a real-time aggregation of the top 25 depth of BTC/USDT Spot markets across supported exchanges. 
 In this example, the following columns **are retrieved for every BTC/USDT orderbook update across supported exchanges in real-time.**
@@ -84,7 +84,7 @@ This will output ranked-by-exchange spread, whale and bid/ask imbalances BTC/USD
 
 The following example output shows how arbitrages will look in the output.
 
-![preview]()
+![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/nodejs/apexe3/assets/nodejsarbs.png?raw=true)
 
 
 **You can easily process this data in your trading algorithm, or store them to analyse how orderbook whales, spreads, imbalances and arbitrage opportunities evolve over time**
@@ -99,7 +99,7 @@ node on-demand-screener.js
 ```
 This will output screened results for BTC/USDT consisting of price and volume metrics on an on-demand basis.
 
-![preview]()
+![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/nodejs/apexe3/assets/nodejsondemandscreener.png?raw=true)
 
 This example screens the BTC/USDT pair using the following code:
 
