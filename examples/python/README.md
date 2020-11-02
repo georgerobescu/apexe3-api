@@ -100,6 +100,6 @@ Uncommenting the following block, will produce similarly structured tables for w
     #emitter.on('VOI_ASK', process_ask_imbalances)
     #emitter.on('ARBITRAGE', process_arbitrage)
 ```
-**You can easily process these table in your trading algorithm, or store them to analyse how orderbook whales, spreads, imbalances and arbitrage opportunities evolve over time **
+** You can easily process these table in your trading algorithm, or store them to analyse how orderbook whales, spreads, imbalances and arbitrage opportunities evolve over time **
 
 
