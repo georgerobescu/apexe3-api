@@ -75,7 +75,7 @@ python3 examples/python/setup.py install
 sudo python3 examples/python/setup.py install 
 ```
 
-See Python Quick start below for an example of what you can do once the dependencies have been installed. 
+See [Quick start](https://github.com/apexe3/apexe3-api/blob/main/README.md#quick-start---global-aggregated-orderbook-streamed-in-the-command-line) below for an example of what you can do once the dependencies have been installed. 
 
 **Nodejs**
 
