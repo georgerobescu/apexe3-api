@@ -1,1 +1,15 @@
-# APEX:E3 API Cryptocurrency Analytics Examples
+# APEX:E3 API Cryptocurrency Analytics Low Code Examples
+
+Here you will find powerful low code examples for [Python](), [Nodejs]() and [Google Sheets]().  
+
+The examples cover the following usecases
+
+- Streaming of a real-time global orderbook for a given pair across exchanges
+- Streaming of total liquidity available for a given pair across exchanges
+- Streaming of identified whale orders, arbitrageable markets, bid/ask imbalances and spreads
+- On-demand programmatic screening using well known technical indicators as filters
+- On-demand lookup of supported tokens, markets and exchanges
+- Google Sheet insights, exchange analytics and global orderbook dashboards
+
+All examples make use of an apexe3 wrapper that takes care of connectivity and data formatting. As a result the examples provide simplified data structures that can be manipulated, saved or analysed for any use case you desire e.g. algorithmic trading, research or custom dashboard creation.
+
