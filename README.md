@@ -75,6 +75,8 @@ python3 examples/python/setup.py install
 sudo python3 examples/python/setup.py install 
 ```
 
+See Python Quick start below for an example of what you can do once the dependencies have been installed. 
+
 **Nodejs**
 
 **Successfully tested on Node 11.x - 14.x**. Nodejs can be downloaded for Mac and Windows from [here](https://nodejs.org/en/download/)
