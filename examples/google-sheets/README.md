@@ -1,18 +1,20 @@
 # APEX:E3 - API Google Sheet Low Code Examples
 
-![preview]()
-
 All examples make use of the apexe3.gs wrapper script which implements a subset of the REST and websocket API definitions defined in the [APEX:E3 API documentation](https://api.ae3platform.com/docs). 
 
 **Please contact contactus@apexe3.com to get access to this spreadsheet.** 
 
 You can easily manipulate the data contained in all sheets to create derived columns or charts.
 
-## The On-Deman Global Orderbook for any Pair Across Exchanges
+## The On-Demand Global Orderbook & Liquidity for any Pair Across Exchanges
 
-This shows the global orderbooks for bids and asks, by best bid and ask prices respectively (only bids are shown for the sake of example).
+This shows the global orderbook for bids and asks of the inputted pair, by best bid and ask prices respectively (only bids are shown for the sake of example).
 
-![preview]()
+Global liquidity based on aggregated top 25 orderbook depth is also shown.
+
+The form on the top left can be used to select other pairs.
+
+![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/google-sheets/assets/gsheetGlobalOrderbook.png?raw=true)
 
 **As the picture above shows, the top 25 depth for btc/usdt is taken from each exchange, combined and ordered to produce a globally updating orderbook ready for real-time algorithmic trading or analysis.** 
 
@@ -28,28 +30,11 @@ In this example, the following columns **are retrieved for every BTC/USDT orderb
 
 
 
-## Smart Order Routing Analytics - The Real-time Total Supply & Demand of Liquidity for any Pair Across Exchanges
-
-
-This shows the total demand (bid) and supply (ask) liquidity for the BTC/USDT Spot market. 
-![preview]()
-
-The above picture shows an up-to-date aggregation of the top 25 depth of BTC/USDT Spot markets across supported exchanges. 
-In this example, the following columns **are retrieved for every BTC/USDT orderbook update across supported exchanges in real-time.**
-
-- Exchange
-- Ask Liqudity (The total USDT amount available to buy on the relevant exchange at that moment in time. This is based on the top 25 depth)
-- Bid Liqudity (The total USDT in demand on the relevant exchange at that moment in time. This is based on the top 25 depth)
-- Amount (The amount of BTC available to buy on the relevant exchange at that moment in time. This is based on the top 25 depth)
-- Imbalance (Ask Liquidity - Bid Liquidity)
-- Market Price_25 (The likely price of a market order filling the top 25 orders on that exchange)
-
-
 ## Screen markets using technical indicators for any Pair, Quote or Exchange
 
 This shows screened results for BTC/USDT consisting of price and volume metrics on an on-demand basis.
 
-![preview]()
+![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/google-sheets/assets/ScreenerGS.png?raw=true)
 
 This example screens the BTC/USDT pair using the following code:
 
@@ -69,4 +54,4 @@ A successful response will consist of the following columns:
 
 The input form allows for instantly screening pairs, markets or exchanges by RSI, Moving Average, Volatility, Bollinger Bands, Fibretracement, Trends and Ichimoku cloud technical indicator analysis.
 
-Example values can be found by hovering over the input form fields.
+Example values can be found by hovering over the input form fields on the top left.

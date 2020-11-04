@@ -12,13 +12,13 @@ To run:
 cd apexe3-api/examples/nodejs
 node real-time-global-orderbook.js
 ```
-This will output the global orderbooks for bids and asks, by best bid and ask prices respectively (only bids are shown for the sake of example).
+This will output the global orderbooks for bids and asks, by best bid and ask prices respectively (only bids are shown in the picture below for the sake of example).
 
 ![preview](https://github.com/apexe3/apexe3-api/blob/main/examples/nodejs/apexe3/assets/nodejsglobalorderbook.png?raw=true)
 
-**As the picture above shows, the top 25 depth for btc/usdt is taken from each exchange, combined and ordered to produce a globally updating orderbook ready for real-time algorithmic trading or analysis.** 
+**As the picture above shows, the top 25 depth for BTC/USDT is taken from each exchange, combined and ordered to produce a globally updating orderbook ready for real-time algorithmic trading or analysis.** 
 
-The initialise_global_orderbook function initialises the global orderbook with BTC/USDT SPOT market. You can change "btc", "usdt" to a pair of your choice. (Derivatives (SWAP, FUTURE) are also supported).
+The initialiseGlobalOrderbook function initialises the global orderbook with BTC/USDT SPOT market. You can change the pair as desired. (Derivatives (SWAP, FUTURE) are also supported).
 ```javascript
    await apexe3.initialiseGlobalOrderbook(base,quote);
 ```
@@ -128,7 +128,7 @@ The screen function, imported from the apexe3.js wrapper class, can take more pa
 ```
 This allows for instantly screening pairs, markets or exchanges by RSI, Moving Average, Volatility, Bollinger Bands, Fibretracement, Trends and Ichimoku cloud technical indicator analysis.
 
-Example values for these parameters can be found in apexe3.py under the following section:
+Example values for these parameters can be found in apexe3.js under the following section:
 
 ```javacript
 //screener filter values for reference
