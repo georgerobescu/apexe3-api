@@ -84,6 +84,7 @@ function removeTriggers() {
 function refreshData() {
     updateDateOnInsights();
     updateDateOnExchangeAnalytics();
+    updateDateOnGlobalOrderbook();
 }
 
 /**
@@ -773,7 +774,7 @@ function AE3OHLCV(base, quote, exchange) {
 function fetchGlobalOrderbook(base, quote, refreshValue) {
 
     try {
-
+        
         if (base == null || base == '' || quote == null || quote == '') {
 
             return [['Must specify a valid basedId and quoteId']];
@@ -798,6 +799,9 @@ function fetchGlobalOrderbook(base, quote, refreshValue) {
             var baseId = tokenToCannoicalIdMap.get(base);
             var quoteId = tokenToCannoicalIdMap.get(quote);
 
+            //baseId = 'FIL:CRYPTO';
+            //quoteId = 'USDT:CRYPTO';
+          
             var encodedBase = encodeURIComponent(baseId);
             var encodedQuote = encodeURIComponent(quoteId);
 
@@ -808,6 +812,8 @@ function fetchGlobalOrderbook(base, quote, refreshValue) {
             var response = UrlFetchApp.fetch(url, creds);
 
             Logger.log(response);
+            
+            var responseContent = JSON.parse(response.getContentText());
 
             var entities = JSON.parse(response.getContentText()).result;
 
@@ -819,13 +825,16 @@ function fetchGlobalOrderbook(base, quote, refreshValue) {
             //assume top 25 of each orderbook to avoid depth noise
             for (var i = 0; i < entities.length; i++) {
 
-                for (var j = 0; j < 25; j++) {
+                for (var j = 0; j < Math.min(entities[i].bids.length,entities[i].asks.length); j++) {
 
+                  try{
                     var bidRow = [entities[i].e, entities[i].bids[j][1], entities[i].bids[j][0]]
                     bids.push(bidRow);
 
                     var askRow = [entities[i].asks[j][0], entities[i].asks[j][1], entities[i].e]
                     asks.push(askRow);
+                  }
+                  catch(e){}
 
                 }
 
@@ -839,6 +848,7 @@ function fetchGlobalOrderbook(base, quote, refreshValue) {
 
             var globalAggLength = Math.min(bids.length, asks.length);
 
+            
             for (var i = 0; i < globalAggLength; i++) {
 
                 var row = [bids[i][0], bids[i][1], bids[i][2], asks[i][0], asks[i][1], asks[i][2]];
@@ -912,7 +922,3 @@ function compareAsksAsc(a, b) {
         return -1;
     return 0;
 }
-
-
-
-

@@ -1,3 +1,10 @@
 .DS_Store
 .vscode/settings.json
 node_modules
+examples/nodejs/package-lock.json
+examples/python/apexe3.egg-info/dependency_links.txt
+examples/python/apexe3.egg-info/PKG-INFO
+examples/python/apexe3.egg-info/requires.txt
+examples/python/apexe3.egg-info/SOURCES.txt
+examples/python/apexe3.egg-info/top_level.txt
+examples/python/dist/apexe3-0.0.1-py3.8.egg

@@ -425,38 +425,43 @@ def fetch_global_orderbook_for_pair(base, quote, marketType):
     params = 'baseId=' + encodedBase + '&quoteId=' + encodedQuote + '&aggregate=true'
     url = requestApiUrl + '/orderbook/' + marketType + '?' + params
 
+    creds = get_options(accessToken)
+
+    if (accessToken === '' or accessToken == null): 
+      print('Invalid credentials')
+      return null
+
     headersVal = { "Authorization": "bearer " + accessToken }
     response = requests.get(url, headers=headersVal)
 
-    entities = response.json()["result"]
+    entities = await response.json()["result"]
 
     bids = []
     asks = []
 
     globalOB = []
 
-    for i in range(0,len(entities)):
-      for j in range(0, min(len(entities[i]['bids']), len(entities[i]['asks']))):
+    for (var i = 0; i < len(entities) ):
+      for (var j = 0; j < min(len(entities[i].bids), len(entities[i].asks)) ):
         try:
-          bidRow = [entities[i]['e'], entities[i]['bids'][j][1], entities[i]['bids'][j][0]]
-          bids.append(bidRow)
+          var bidRow = [entities[i].e, entities[i].bids[j][1], entities[i].bids[j][0]]
+          bids.append(bidRow);
 
-          askRow = [entities[i]['asks'][j][0], entities[i]['asks'][j][1], entities[i]['e']]
-          asks.append(askRow)
-
+          var askRow = [entities[i].asks[j][0], entities[i].asks[j][1], entities[i].e]
+          asks.append(askRow);
         except ValueError:
             print('')
 
-
+    //bids descending
     bids = sorted(bids, key=itemgetter(2), reverse=True)
     asks = sorted(asks, key=itemgetter(0))
 
 
-    globalAggLength = min(len(bids), len(asks))
+    globalAggLength = min(bids.length, asks.length)
 
-    for i in range(0,globalAggLength):
-      row = [bids[i][0], bids[i][1], bids[i][2], asks[i][0], asks[i][1], asks[i][2]]
-      globalOB.append(row)
+    for (var i = 0; i < globalAggLength):
+      var row = [bids[i][0], bids[i][1], bids[i][2], asks[i][0], asks[i][1], asks[i][2]];
+      globalOB.push(row);
     
 
     return globalOB

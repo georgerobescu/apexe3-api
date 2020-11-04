@@ -364,7 +364,7 @@ module.exports = {
    * @param {*} marketType 
    */
   async generateDefaultGlobalOrderbookStreamConfigurations(base, quote, exchange = null, marketType = 'SPOT') {
-    
+
     base = convertSymbolPart(base);
     quote = convertSymbolPart(quote);
 
@@ -502,8 +502,8 @@ module.exports = {
         analyticSize: "ALL",
         analyticPivot: "ALL",
         assetClassification: "ALT",
+      }
     }
-}
 
 
     streamConfigs.push(bidImbalanceSubscriptionConfig);
@@ -536,6 +536,70 @@ module.exports = {
    */
   async screen(base, quote, exchanges, rsi, smaCross, volatility, weeklyOpenChg, bollingerBand, fibRetracements, trends, ichimoku) {
     return await screen(base, quote, exchanges, rsi, smaCross, volatility, weeklyOpenChg, bollingerBand, fibRetracements, trends, ichimoku);
+  },
+  /**
+   * 
+   * On-demand global orderbook for pair
+   * 
+   * @param {*} base 
+   * @param {*} quote 
+   * @param {*} marketType 
+   */
+  async fetchGlobalOrderbookForPair(base, quote, marketType) {
+
+    base = convertSymbolPart(base);
+    quote = convertSymbolPart(quote);
+
+    var encodedBase = encodeURIComponent(base);
+    var encodedQuote = encodeURIComponent(quote);
+
+    var params = 'baseId=' + encodedBase + '&quoteId=' + encodedQuote + '&aggregate=true';
+    var url = requestApiUrl + '/orderbook/' + marketType + '?' + params;
+
+    var creds = getOptions(this.accessToken);
+
+    if (this.accessToken === '' || this.accessToken == null) {
+      console.log('Invalid credentials');
+      return null;
+    } else { }
+
+    var response = await fetch(url, creds);
+
+    var entities = await response.json().then((r) => r.result);
+
+    var bids = [];
+    var asks = [];
+
+    var global = [];
+
+
+    for (var i = 0; i < entities.length; i++) {
+      for (var j = 0; j < Math.min(entities[i].bids.length, entities[i].asks.length); j++) {
+        try {
+          var bidRow = [entities[i].e, entities[i].bids[j][1], entities[i].bids[j][0]]
+          bids.push(bidRow);
+
+          var askRow = [entities[i].asks[j][0], entities[i].asks[j][1], entities[i].e]
+          asks.push(askRow);
+        }
+        catch (e) { }
+      }
+    }
+
+    //bids descending
+    bids = bids.sort(compareBidsDesc);
+    //asks ascending
+    asks = asks.sort(compareAsksAsc);
+
+    var globalAggLength = Math.min(bids.length, asks.length);
+
+    for (var i = 0; i < globalAggLength; i++) {
+      var row = [bids[i][0], bids[i][1], bids[i][2], asks[i][0], asks[i][1], asks[i][2]];
+      global.push(row);
+    }
+
+    return global;
+
   }
 }
 
@@ -633,6 +697,8 @@ function updateGlobalOrderbook(parsedMsg) {
   }
 
 }
+
+
 
 /**
  * 
@@ -799,4 +865,64 @@ function convertSymbolPart(part) {
 
 }
 
+
+/**
+ * 
+ * Helper function to generate requestion options
+ * per the APEX:E3 API spec
+ * 
+ * @param accessToken 
+ */
+function getOptions(accessToken) {
+  return {
+    'method': 'get',
+    'headers': { "Authorization": "bearer " + accessToken }
+  };
+}
+
+/**
+ * 
+ * Helper function for bids descending sort
+ * 
+ * @param a 
+ * @param b 
+ */
+function compareBidsDesc(a, b) {
+  if (a[2] > b[2])
+    return -1;
+  if (a[2] < b[2])
+    return 1;
+
+  return 0;
+}
+
+/**
+* 
+* Helper function for asks descending sort
+* 
+* @param a 
+* @param b 
+*/
+function compareAsksDesc(a, b) {
+  if (a[0] > b[0])
+    return -1;
+  if (a[0] < b[0])
+    return 1;
+  return 0;
+}
+
+/**
+* 
+* Helper function for asks ascending sort
+* 
+* @param a 
+* @param b 
+*/
+function compareAsksAsc(a, b) {
+  if (a[0] > b[0])
+    return 1;
+  if (a[0] < b[0])
+    return -1;
+  return 0;
+}
 
